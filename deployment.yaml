@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: cart-service-XX
+  name: cart-service-XX
+  namespace: lab-cph
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cart-service-XX
+    spec:
+      containers:
+      - image: mycluster.icp:8500/lab-cph/cart-service-XX:v1.0.0
+        name: cart-service-XX
+        ports:
+        - containerPort: 8080
+          protocol: TCP
